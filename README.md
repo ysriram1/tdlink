@@ -88,7 +88,7 @@ td.get_historical_prices(symbol='QQQ',
                     return_df=True # if False, returns a dictionary instead
                     )
 ```
-![Historical Data](docs/img/historical_data.png)
+<div><img src="docs/img/historical_data.png" alt="Historical Data"/></div>
 
 <h4> Options Chain </h4>
 ```python
@@ -107,7 +107,7 @@ td.get_options_chain(symbol='QQQ', # symbol of underlying security
                     return_df=False # if False, returns a dictionary instead
                     )
 ```
-![Options Chain](docs/img/options.png)
+<div><img src="docs/img/options.png" alt="Options Chain"/></div>
 
 
 <h4> Top Movers of an Index </h4>
@@ -117,7 +117,8 @@ td.get_movers_for_index(symbol = 'DJI', # has to be an index DJI, SPX.X  etc
                         change = None # 'value' or 'percent'. if None, defaults to percentage
                         )
 ```
-![Top Movers](docs/img/movers.png)
+<div><img src="docs/img/movers.png" alt="Top Movers"/></div>
+
 
 <h4> Market Hours </h4>
 ```python

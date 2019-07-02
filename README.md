@@ -15,7 +15,7 @@ Follow these steps to get a code:
 1) Go to TDAmeritrade developer: https://developer.tdameritrade.com/</br>
 2) Login and go to "My Apps" </br>
 3) Create an app. Use http://localhost as the callback url.</br>
-4) Go to this url: https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=http://localhost&client_id=<YourAppName>@AMER.OAUTHAP </br>
+4) Go to this url: https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=http://localhost&client_id=[YourAppName]@AMER.OAUTHAP </br>
 5) Enter your TD credentials and give premission </br>
 6) Once you login, you will be redirected to a url of this form https://localhost/?code=[code] </br>
 7) Copy the [code] part. Add it as a parameter to the TDAmeritrade class. </br>

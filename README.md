@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) 
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 
 # tdlink
@@ -29,10 +29,13 @@ Follow these steps to get a code:
 <h3> Installation </h3>
 
 <h4> From PyPI </h4>
+
 ```
 pip install tdlink
 ```
+
 <h4> From Source </h4>
+
 ```
 pip install --upgrade git+git://github.com/ysriram1/tdlink
 ```

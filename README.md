@@ -60,6 +60,7 @@ td.refresh_token # returns refresh token
 
 td.access_token # returns the access token
 ```
+
 *Note:* You can save the refresh token for creating a future session instead of using a code.
 
 <h3> Get Data from API </h3>
@@ -74,6 +75,7 @@ td.get_current_quote(symbol='QQQ',
 *NOTE:* Use this also for prices of options.
 
 <h4> Historical Data </h4>
+
 ```python
 td.get_historical_prices(symbol='QQQ',
                     period_type='day', # 'day'
@@ -88,9 +90,11 @@ td.get_historical_prices(symbol='QQQ',
                     return_df=True # if False, returns a dictionary instead
                     )
 ```
+
 <div><img src="docs/img/historical_data.png" alt="Historical Data"/></div>
 
 <h4> Options Chain </h4>
+
 ```python
 td.get_options_chain(symbol='QQQ', # symbol of underlying security
                     strike=None, # mention a specific strike
@@ -107,16 +111,19 @@ td.get_options_chain(symbol='QQQ', # symbol of underlying security
                     return_df=False # if False, returns a dictionary instead
                     )
 ```
+
 <div><img src="docs/img/options.png" alt="Options Chain"/></div>
 
 
 <h4> Top Movers of an Index </h4>
+
 ```python
 td.get_movers_for_index(symbol = 'DJI', # has to be an index DJI, SPX.X  etc
                         direction = None, # 'up' or 'down'. if None, returns both
                         change = None # 'value' or 'percent'. if None, defaults to percentage
                         )
 ```
+
 <div><img src="docs/img/movers.png" alt="Top Movers"/></div>
 
 

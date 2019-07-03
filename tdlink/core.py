@@ -19,7 +19,7 @@ NOTE: The code you obtain is only valid for a limited period of time. If expired
 import requests
 import json
 from datetime import datetime
-from datetime_utils \
+from .datetime_utils \
         import iso_date_time, convert_to_epoch_time, convert_from_epoch_time, return_dt_from_iso
 import pandas as pd
 import time

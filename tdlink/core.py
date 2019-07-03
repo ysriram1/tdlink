@@ -198,46 +198,6 @@ class TDlink:
         return_vals = [response_dict[symbol][key] for key in to_return]
         return return_vals
 
-    # https://developer.tdameritrade.com/market-hours/apis/get/marketdata/%7Bmarket%7D/hours
-    # response processing only supported for OPTION and EQUITY
-    # returns a dict of the market hours
-    def get_market_hours(self,
-                        kind='EQUITY', # EQUITY, OPTION, FUTURE, BOND, FOREX
-                        date='01/15/2019', # mm/dd/yyyy
-                        return_regular_hours=True # get the regular hours from markethours dict and returns them
-                        ):
-        '''
-        Returns a dict of market hours for a given date and market type
-        https://developer.tdameritrade.com/market-hours/apis/get/marketdata/%7Bmarket%7D/hours
-        Access link to get a explanation of parameters
-        '''
-        request_url = self.request_url_template + 'marketdata/{}/hours'.format(kind)
-        query_dict = {
-            'apikey':self.app_key,
-            'date':iso_date_time(date).split('T')[0] # only extract the date part
-        }
-        if abs(self.grant_time - time.time()) >= 1800: self.refresh_access() # access token needs to be refreshed every 1800 seconds
-        # add query params to url
-        query_params = '?'
-        for key, val in query_dict.items():
-            if val: # skip the None values
-                query_params += key + '=' + str(val) + '&'
-        request_url = request_url + query_params[:-1] # remove last '&'
-        response = requests.get(request_url, headers=self.authorization)
-        if self.raw_response or type.lower() in ['future', 'bond', 'forex']: return response
-
-        # process response
-        response_dict = response.json()
-        if type.lower() == 'option': market = 'option'; market_sub = 'EQO'
-        if type.lower() == 'equity': market = 'equity'; market_sub = 'EQ'
-        try: market_hours_dict = response_dict[market][market_sub]['sessionHours']
-        except: return [False, False]
-        if not return_regular_hours: return market_hours_dict
-        regular_hours = [return_dt_from_iso(market_hours_dict['regularMarket'][0]['start']),
-                        return_dt_from_iso(market_hours_dict['regularMarket'][0]['end'])]
-        return regular_hours
-
-
     # https://developer.tdameritrade.com/option-chains/apis/get/marketdata/chains
     # returns a table with the option symbol, date, and strike
     def get_options_chain(self,

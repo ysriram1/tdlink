@@ -67,10 +67,12 @@ td.access_token # returns the access token
 <h3> Get Data from API </h3>
 
 <h4> Current Quote </h4>
+
 ```python
 td.get_current_quote(symbol='QQQ',
           to_return=['askPrice', 'bidPrice', 'totalVolume'])
 ```
+
 <div><img src="docs/img/quote.png" alt="quote" width="200"/></div>
 
 *NOTE:* Use this also for prices of options.

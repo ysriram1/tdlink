@@ -49,7 +49,7 @@ from tdlink import TDlink
 
 td = TDlink(app_key='TRADING123',
                 redirect_uri='http://localhost',
-                code=code, # follow instructions to get the code
+                code='3V7m...', # follow instructions to get the code
                 return_raw_response=False # will return formatted df if False, else returns HTTP response
                 )
 ```
@@ -130,4 +130,4 @@ td.get_movers_for_index(symbol = 'DJI', # has to be an index DJI, SPX.X  etc
 
 <h3> Support </h3>
 
-Please email me at ysriram@umich.edu if you have any questions, suggestions, or ideas for improvement. 
+Please email me at ysriram@umich.edu if you have any questions, suggestions, or ideas for improvement.

@@ -49,7 +49,7 @@ from tdlink import TDlink
 
 td = TDlink(app_key='TRADING123',
                 redirect_uri='http://localhost',
-                code='lF%2BU...E', # follow instructions to get the code
+                code=code, # follow instructions to get the code
                 return_raw_response=False # will return formatted df if False, else returns HTTP response
                 )
 ```
@@ -109,7 +109,7 @@ td.get_options_chain(symbol='QQQ', # symbol of underlying security
                     contract_type='CALL', # CALL, PUT
                     strikes=5, # number of strikes above or below at-the-money price
                     strategy='SINGLE',
-                    return_df=False # if False, returns a dictionary instead
+                    return_df=True # if False, returns a dictionary instead
                     )
 ```
 
@@ -128,12 +128,6 @@ td.get_movers_for_index(symbol = 'DJI', # has to be an index DJI, SPX.X  etc
 <div><img src="docs/img/movers.png" alt="Top Movers"/></div>
 
 
-<h4> Market Hours </h4>
+<h3> Support </h3>
 
-```python
-td.get_market_hours(
-              type='EQUITY', # EQUITY, OPTION, FUTURE, BOND, FOREX
-              date='01/15/2019', # mm/dd/yyyy
-              return_regular_hours=True # get the regular hours from markethours dict and returns them
-              )
-```
+Please email me at ysriram@umich.edu if you have any questions, suggestions, or ideas for improvement. 

@@ -4,7 +4,7 @@ with open('README.md', 'r') as f:
     long_description = f.read()
 
 setup(name='tdlink',
-      version='0.2',
+      version='0.3',
       description='Python Library for TDAmeritrade API',
       long_description=long_description,
       long_description_content_type="text/markdown",
